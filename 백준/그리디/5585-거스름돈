@@ -1,0 +1,15 @@
+public class Main {
+	public static void main(String[] args) throws NumberFormatException, IOException {
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		int[] arr={500,100,50,10,5,1};
+		int n = 1000-Integer.parseInt(br.readLine());
+		int cnt=0;
+		for(int a :arr) {
+			cnt+=n/a;
+			n=n%a;
+		}
+		System.out.println(cnt);
+	}
+}
+
+***그리디-거슬러줄 수 있는 동전의 종류 =K 에 따라 //시간복잡도O(K)이다
