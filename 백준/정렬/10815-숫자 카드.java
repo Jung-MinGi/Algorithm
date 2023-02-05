@@ -48,6 +48,8 @@ public class Main {
 	}
 }
 /*
+ * 데이터크기가 500000임
+ * 완전탐색으로 풀면 시간초과발생
  * 새로운 내용을 많이 배운 문제
  * Array.sort --배열정렬할때,듀얼피봇사용
  * Collections.sort -- 리스트 정렬할때,timsort사용
