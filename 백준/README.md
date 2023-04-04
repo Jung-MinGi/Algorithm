@@ -3,7 +3,7 @@
 #### 구현
 #### 그리디
 ***
-*[거스름돈](https://github.com/MingGi-Jung/Algorithm/blob/main/%EB%B0%B1%EC%A4%80/%EA%B7%B8%EB%A6%AC%EB%94%94/5585-%EA%B1%B0%EC%8A%A4%EB%A6%84%EB%8F%88.java)
+* [거스름돈](https://github.com/MingGi-Jung/Algorithm/blob/main/%EB%B0%B1%EC%A4%80/%EA%B7%B8%EB%A6%AC%EB%94%94/5585-%EA%B1%B0%EC%8A%A4%EB%A6%84%EB%8F%88.java)
   - 수행시간이 거슬러 줄 수 있는 돈의 개수에 비례하므로 시간복잡도가 O(N)인 코드다 
 #### 정렬
 ***
