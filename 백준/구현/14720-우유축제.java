@@ -40,7 +40,4 @@ public class Main {
 		System.out.println(cnt);
 	}
 }
-/*
-시간제한 1초 이므로 2천만번 아래로 계산해야됨
-데이터 개수가 1000개이므로 시간복잡도 O(N^2)까지 가능
- */
+
