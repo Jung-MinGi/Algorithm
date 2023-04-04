@@ -5,7 +5,7 @@
 * [우유축제](https://github.com/MingGi-Jung/Algorithm/edit/main/%EB%B0%B1%EC%A4%80/%EA%B5%AC%ED%98%84/14720-%EC%9A%B0%EC%9C%A0%EC%B6%95%EC%A0%9C.java)
   - 데이터 개수가 작아(1000개) 시간복잡도 O(N^2)까지 사용 가능
 * [분수찾기](https://github.com/MingGi-Jung/Algorithm/blob/main/%EB%B0%B1%EC%A4%80/%EA%B5%AC%ED%98%84/1193-%EB%B6%84%EC%88%98%EC%B0%BE%EA%B8%B0.java)
-  - 데이터 크기 10^7 시간복잡도O(N)이하로 접근
+  - 데이터 크기 10^7이여서 시간복잡도O(N^2)이상인 코드는 시간초과 걸린다
 #### 그리디
 ***
 * [거스름돈](https://github.com/MingGi-Jung/Algorithm/blob/main/%EB%B0%B1%EC%A4%80/%EA%B7%B8%EB%A6%AC%EB%94%94/5585-%EA%B1%B0%EC%8A%A4%EB%A6%84%EB%8F%88.java)
