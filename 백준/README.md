@@ -2,7 +2,9 @@
 
 #### 구현
 ***
-* []()
+* [우유축제](https://github.com/MingGi-Jung/Algorithm/edit/main/%EB%B0%B1%EC%A4%80/%EA%B5%AC%ED%98%84/14720-%EC%9A%B0%EC%9C%A0%EC%B6%95%EC%A0%9C.java)
+  - 데이터 개수가 작아(1000개) 시간복잡도 O(N^2)까지 사용 가능
+
 #### 그리디
 ***
 * [거스름돈](https://github.com/MingGi-Jung/Algorithm/blob/main/%EB%B0%B1%EC%A4%80/%EA%B7%B8%EB%A6%AC%EB%94%94/5585-%EA%B1%B0%EC%8A%A4%EB%A6%84%EB%8F%88.java)
