@@ -6,5 +6,7 @@
 
 - - -
 
-
+* [카드뭉치](https://github.com/MingGi-Jung/Algorithm/blob/main/%ED%94%84%EB%A1%9C%EA%B7%B8%EB%9E%98%EB%A8%B8%EC%8A%A4/%EC%B9%B4%EB%93%9C%EB%AD%89%EC%B9%98.java)
+  * add함수와 set함수를 혼동해서 많이 해맨 문제
+  * 
 
