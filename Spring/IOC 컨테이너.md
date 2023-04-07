@@ -23,4 +23,8 @@
  * 독립적으로 실행되는 애플리케이션에는 ClassPathXmlApplicationContext,FileSystemXmlApplicationContext가 쓰인다
    * ClassPathXmlApplicationContext는 클래스패스가 지정한 위치에서 xml을 읽는다.
    * FileSystemXmlApplicationContext는 파일시스템이 지정한 위치에서 xml을 읽는다.
-   *
+ * 컨테이너에 위치한 빈을 사용하는 법
+ ```
+ ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+ context.getBean("xml에서 빈 설정시 사용한 id값을 넣으면 된다");//그럼 그 빈이 의존하는 다른 빈의 메서드를 호출 가능함
+ ```
