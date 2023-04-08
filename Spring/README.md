@@ -60,3 +60,7 @@ Applicationcontext context = new Applicationcontext("applicationcontext.xml의 �
 * @Configuration후 안에 메서드에 @Bean을 붙여주면<br>
 ```<bean id="" class="클래스의 풀경로"/>```와 같은 의미다
 * @ComponentScan == ```<component-scan>```
+
+
+## 출처
+애시시 사린, 제이 샤르마, [배워서 바로 쓰는 스프링 프레임워크], 오현석 옮김, 한빛미디어
