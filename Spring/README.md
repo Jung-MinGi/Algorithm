@@ -44,8 +44,8 @@ Applicationcontext context = new Applicationcontext("applicationcontext.xml의 �
 * 빈 스코프
     * 빈을 공유하기 위한 인스턴스를 하나만 만드는경우(싱글턴스코프)--default임
     * 빈이 요청될때마다 새로운 인스턴스를 만드는 경우(프로토타입 스코프)
-
-### 애너테이션 기반 개발
+***
+## 애너테이션 기반 개발
 * @Component-->클래스위에 작성 
 * 애플리케이션에서는 컨트롤러,서비스,DAO에 따라 다른 애너테이션을 사용한다. 각각 @Controller, @Service, @Repository를 사용한다.
 * 애너테이션을 붙여주고 스프링의 클래스경로 스캐닝을 활성화하면
@@ -56,7 +56,7 @@ Applicationcontext context = new Applicationcontext("applicationcontext.xml의 �
 * @Autowired
     * 가장 대표적인 의존관계 애너테이션 
 * (required = false)라고 두면 자동연결시 예외발생 방지
-### 자바 기반 설정
+## 자바 기반 설정
 * @Configuration후 안에 메서드에 @Bean을 붙여주면<br>
 ```<bean id="" class="클래스의 풀경로"/>```와 같은 의미다
 * @ComponentScan == ```<component-scan>```
