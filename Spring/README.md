@@ -40,3 +40,4 @@ Applicationcontext context = new Applicationcontext("applicationcontext.xml의 �
 //스프링 컨테이너 인스턴스가 생기면서 xml파일안에 있는 빈들이 인스턴스화된다는 의미
 //빈에대한 접근은 context.getBean메서드로 접근가능
 ```
+* 빈 팩토리는 스프링의 기본적인 빈 생성과 관리 기능을 제공하며, 애플리케이션 컨텍스트는 빈 팩토리의 모든 기능을 포함하면서 추가적인 기능을 제공한다.
