@@ -28,6 +28,7 @@
    * FileSystemXmlApplicationContext는 파일시스템이 지정한 위치에서 xml을 읽는다.
  * 컨테이너에 위치한 빈을 사용하는 법
  ```
- ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+ ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");//생성자 인수로 xml파일의 경로를 적어준다
  context.getBean("xml에서 빈 설정시 사용한 id값을 넣으면 된다");//그럼 그 빈이 의존하는 다른 빈의 메서드를 호출 가능함
  ```
+* getBean() 메서드는 가로안에 들어갈 id값을 가지고 있는 `해당 빈의 인스턴스를 요청`하는 것이다. 
