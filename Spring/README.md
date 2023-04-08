@@ -1,7 +1,20 @@
-## Spring 
+# Spring 
 * 자바 엔터프라이즈 애플리케이션 개발을 단순하게 해주는 오픈 소스 애플리케이션 프레임워크다
 * 스프링을 사용하면 개발자는 애플리케이션의 비즈니스 로직을 작성하는데 더 집중할 수 있다.
 
-## 스프링 IOC 컨테이너
- * [DI](https://github.com/Jung-MinGi/TIL/blob/main/Spring/DI.md)
- * [Bean](https://github.com/Jung-MinGi/TIL/blob/main/Spring/Bean.md)
+## 스프링 IOC 컨테이너란
+* 자바 애플리케이션은 서로 `의존관계(dependency)`인 객체들로 이루어져있다. `DI(생성자나 세터메서드를 이용하여 의존성을 만드는 디자인패턴)` 의존관계를 형성한다.
+* 스프링 컨테이너가 생성하고 관리하는 객체들을 **빈**이라 부른다. 의존관계를 만들고 관리하는 책임은 IOC컨테이너에게 있어 DI를 `IOC(Inversion of Control)`라고도 부른다.
+```
+//박지성 클래스는 Person에 의존한다
+class 박지성{
+  private Person person;
+  
+  public 박지성(){
+    this.person = new Person();
+  }
+
+}
+class Person{
+}
+```
