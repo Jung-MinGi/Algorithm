@@ -4,4 +4,4 @@
 
 ## 스프링 IOC 컨테이너
  * [DI](https://github.com/Jung-MinGi/TIL/blob/main/Spring/DI.md)
- 
+ * [Bean](https://github.com/Jung-MinGi/TIL/blob/main/Spring/Bean.md)
