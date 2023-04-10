@@ -25,7 +25,7 @@
  * 여러가지 컨테이너 인스턴스가 존재한다
  * 독립적으로 실행되는 애플리케이션에는 ClassPathXmlApplicationContext,FileSystemXmlApplicationContext가 쓰인다
    * ClassPathXmlApplicationContext는 클래스패스가 지정한 위치에서 xml을 읽는다.
-   * FileSystemXmlApplicationContext는 파일시스템이 지정한 위치에서 xml을 읽는다.
+   * FileSystemXmlApplicationContext는 파일시스템이 지정한 위치에서 xml을 읽는다. 
  * 컨테이너에 위치한 빈을 사용하는 법
  ```
  ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");//생성자 인수로 xml파일의 경로를 적어준다
