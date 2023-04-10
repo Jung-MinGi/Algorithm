@@ -36,7 +36,4 @@ public class Main {
 		}else System.out.println(arr.get(0));
 		}
 }
-/*
-*map 메서드중getOrDefault 
-*찾는 키가 맵에 있으면 요소값을 반환 없으면 기본값 반환
-*/
+

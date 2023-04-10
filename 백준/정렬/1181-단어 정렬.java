@@ -34,7 +34,4 @@ public class Main {
 		System.out.println(sb);
 	}
 }
-/*
-*내가 원하는 정렬조건을 구현할려면 
-*Comparator인터페이스를 이용해서 Arrays.sort메소드에 익명객체를 이용해서 인자로 넘겨주면 
-*/
+

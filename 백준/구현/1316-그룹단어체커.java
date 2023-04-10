@@ -29,7 +29,5 @@ public class Main {
 		System.out.println(n-error);
 	}
 }
-/*
- * 데이터가 가장 큰 경우라도 반복문을 N번 만큼만 순회하면 되니 시간복잡도는 O(N)이다
- */
+
  
