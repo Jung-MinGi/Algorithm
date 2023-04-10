@@ -62,7 +62,7 @@ class Car{
 
 ***캡슐화의 두번째 기능***
 
-아래에서 현대와bmw의 상태값을 50씩 올리고 싶은경우
+아래에서 현대와bmw의 상태값(speed)을 50씩 올리고 싶은경우
 ```
 class CarDetail{
  public void main(String[] args){
