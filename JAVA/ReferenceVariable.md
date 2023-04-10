@@ -34,6 +34,17 @@ cat = aaa.Animal@1175e2db-->(Animal(9)의 경로)
 
 
 ### 참조변수의 동등성 비교
+```
+public class Main {
+	public static void main(String[] args) {
+Animal dog = new Animal(5);
+Animal cat = new Animal(5);
+	}
+}
+```
+위 코드는 보기에 같은 객체같지만 힙에 두개의 Animal객체가 생성된 상태이다.
+
+참조변수에게 '=='연산을 하게되면 자신들이 가리키고있는 객체의 ***경로***를 비교하게되어 결국 둘이 다르다는 값이 나오게 된다
 
 
 
