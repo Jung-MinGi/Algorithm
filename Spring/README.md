@@ -2,7 +2,7 @@
 
 1. [프레임워크란](https://github.com/Jung-MinGi/TIL/blob/main/Spring/framework.md)
 
-
+ko;k;ok;ok;o
 
 ## 스프링 IOC 컨테이너란
 * 자바 애플리케이션은 서로 `의존관계(dependency)`인 객체들로 이루어져있다. `DI(생성자나 세터메서드를 이용하여 의존성을 만드는 디자인패턴)`로 의존관계를 형성한다.
