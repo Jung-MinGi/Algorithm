@@ -19,9 +19,9 @@ void start(){} //특정 객체의 action를 규정
 ```
 class CarDetail{
  public void main(String[] args){
-  Car hyundai = new Car(); //서로 독립적인 객체
+  Car 현대 = new Car(); //서로 독립적인 객체
   Car bmw = new Car();//독립적 객체
-   hyundai.speed=100;
+   현대.speed=100;
    bmw.speed=90; 
   }
 }
@@ -50,11 +50,55 @@ class Car{
 }
 
 ```
- 
 
 ***왜 데이터는 메서드를 거쳐서만 외부에 노출돼야 하나??***
 > 만약 외부에서 특정 필드에 맞지 않은 값을 넣으려고 할때
 메서드를 통해서 값을 주입 받게 되면 그안에서 잘못된 데이터를 차단할 수 있기 때문이다.
 
-즉 메서드를 통해 특정 개체에 들어갈 수 있는 것과 없는 것을  메서드를 통해 검증하는 것이 캡슐화의 주요 기능이다.
+즉 특정 클래스의 멤버변수에 들어갈 수 있는 것과 없는 것을  메서드를 통해 검증하는 것이 캡슐화의 주요 기능이다.
+
+***캡슐화의 두번째 기능***
+
+아래에서 현대와bmw의 상태값을 50씩 올리고 싶은경우
+```
+class CarDetail{
+ public void main(String[] args){
+  Car 현대 = new Car(); //서로 독립적인 객체
+  Car bmw = new Car();//독립적 객체
+   현대.speed=100;
+   bmw.speed=90;
+//속도를 올리는 로직
+   int a = 현대.getSpeed()+50;
+   현대.setSpeed(a);
+
+   int a = bmw.getSpeed()+50;
+   bmw.setSpeed(a);
+  }
+}
+```
+객체가 많아지면 매우 비효율적인 작업이다.
+이러한 비즈니스로직 또한 객체 안에 캡슐화할 수 있다.
+```
+class Car{
+  //상태
+  private int speed; // private으로 변수를 비공개시킴
+  //동작
+  public void setSpeed(int speed){
+    this.speed=speed;
+}
+  public int getSpeed(){
+    return speed;
+  }
+  void start(){} //특정 객체의 action를 규정
+}
+//속도올리는 로직
+  void increaseSpeed(int a){
+    this.speed+=a;
+  }
+//속도 감소 로직
+void decreaseSpeed(int a){
+  setSpeed(this.speed+a);
+  }
+```
+클래스안에 메서드 하나 작성해두면 객체가 아무리 많아져도 부담이 없다. 또한 안에 validation로직 을 추가해 속도가 음수가 되는 것을 방지할 수 있다
 
