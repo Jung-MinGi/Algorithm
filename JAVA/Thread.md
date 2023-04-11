@@ -97,7 +97,7 @@ class SecondThread implements Runnable{
 ```
 출력값을 보면 main메서드종료가 콘솔에 먼저 찍힌다 그후에 스래드 1, 2가 종료된걸 볼 수 있다. 스레드는 cpu가 시간낭비없이 효율적인 작업을 할 수 있게 해준다.
 
-
+***
 ## Thread의 상태
 
 * NEW--스레드가처음 생성될 때의 상태로 start메소드를 사용하기 전 단계 생성되고 아래 3개의 상태를 반복해서 돈다
@@ -105,3 +105,50 @@ class SecondThread implements Runnable{
     * Running--스레드가 cpu를 점유해서 동작중인 상태
     * Blockes/Waiting--어떤 외부입력을 기다리는 중 또는 실행이 완료되지 않은 다른 스레드로붜 데이터를 받아야 하는 상황 
 * Terminated/Dead--스레드가 종료
+
+***
+## Thread를 통제하는 ***ExecutorService*** 인터페이스
+
+멀티 스레드 환경에서 스레드를 관리하기 어렵기 때문에 ExecutorService를 이용한다
+
+ExecutorService를 사용하여 스레드 풀을 생성하고 작업 큐를 통해 작업을 관리하고 스레드를 생성 및 제어한다(커넥션 풀과 비슷해보인다..)
+
+* 멀티스레드 환경에서 스레드 작동시켜보기
+```
+public class ThreadTest {
+	public static void main(String[] args) {
+		ExecutorService executorService = Executors.newFixedThreadPool(2);//필요한 스레드의 개수를 지정해준다
+		//execute메서드 --주어진 스레드을 실행함
+		executorService.execute(new FirstThread());
+		executorService.execute(new SecondThread());
+		executorService.shutdown();//executorService를 종료시킴
+	}
+}
+
+ class FirstThread extends Thread{
+	public void run() {
+		for(int i = 1 ; i<51 ; i++) {
+			System.out.print(i+" ");
+		}System.out.println("thread1종료");
+	}
+}
+class SecondThread implements Runnable{
+
+	@Override
+	public void run() {
+		for(int i = 50 ; i<101 ; i++) {
+			System.out.print(i+" ");
+		}
+		System.out.println("thread2종료");
+	}
+}
+```
+스레드 풀에 필요한 스레드의 개수를 지정하고 스레드1,2를 돌려보면 스레드가 잘 작동된다
+
+이번엔 스레드 풀의 스레드 개수를 1개로 주고 secondThread를 먼저 실행해보았다
+```
+50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 thread2종료
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 thread1종료
+
+```
+두번째스레드가 완전히 끝나고 첫번째스레드가 실행된걸 볼 수 있다.
