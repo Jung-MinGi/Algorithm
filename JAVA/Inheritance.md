@@ -103,6 +103,8 @@ public class Test{
 
 Object라는 최상위 클래스에 있는 메서드들이다
 ## Object Class란
+자바에서의 모든 API 및 사용자 클래스의 최상위 타입
+
 배열을 포함한 모든 객체는 ObjectClass안에 존재하는 메서드를 구현한다
 
 어떤 클래스가 다른 클래스를 extends하지 않는다면 자바에서 자동으로 Object클래스를 상속한다. 

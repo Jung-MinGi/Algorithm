@@ -5,3 +5,4 @@
 * [Interface](https://github.com/Jung-MinGi/TIL/blob/main/JAVA/Interface.md)
 * [ReferenceVariable](https://github.com/Jung-MinGi/TIL/blob/main/JAVA/ReferenceVariable.md)
 * [Inheritance](https://github.com/Jung-MinGi/TIL/blob/main/JAVA/Inheritance.md)
+* [Generic](https://github.com/Jung-MinGi/TIL/blob/main/JAVA/Generic.md)
