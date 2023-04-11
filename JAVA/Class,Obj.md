@@ -107,3 +107,21 @@ void decreaseSpeed(int a){
 
 ***
 ## 클래스 더 알아보기
+
+### 추상클래스란
+단독으로 인스턴스를 만들 수 없으며 다른 클래스가 상속해 사용되어진다.
+일반클래스 생성과 달리 추상클래스 생성법은 아래와 같다
+```
+public abstract class AbstractAnimal{
+  abstract public void run();
+}
+```
+클래스에서 메서드를 선언할 뿐 나머지는 하위클래스의 역할이다.
+```
+class Dog extends AbstractAnimal{
+  public void run(){
+    System.out.println("run");
+  };
+}
+```
+추상클래스를 상속하는 쪽에서 추상메서드의 형태를 만들어줘야 한다
