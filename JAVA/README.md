@@ -3,7 +3,7 @@
 
 * [Class and Object](https://github.com/Jung-MinGi/TIL/blob/main/JAVA/Class%2CObj.md)
 * [Interface](https://github.com/Jung-MinGi/TIL/blob/main/JAVA/Interface.md)
+* [Thread](https://github.com/Jung-MinGi/TIL/blob/main/JAVA/Thread.md)
 * [ReferenceVariable](https://github.com/Jung-MinGi/TIL/blob/main/JAVA/ReferenceVariable.md)
 * [Inheritance](https://github.com/Jung-MinGi/TIL/blob/main/JAVA/Inheritance.md)
 * [Generic](https://github.com/Jung-MinGi/TIL/blob/main/JAVA/Generic.md)
-* [Thread]()
