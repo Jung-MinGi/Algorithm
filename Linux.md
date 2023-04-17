@@ -58,5 +58,19 @@ private key           |                 private key (비밀키)
 * mv [옮길파일이름] [경로]
 * mv [파일명] [새로운파일명] 파일이름도 바꿀 수 있다
 * ln -s [바로가기대상파일이름][바로가기파일이름] 바로가기폴더 생성
+* netstat -nlpt 포트번호 보는 법
+* lsb_release -a 우분투버전,코드명 확인
+* 서비스 종료,시작
+    * sudo systemctl stop [프로세스이름]
+    * sudo systemctl start [프로세스이름]
+* ps -ef 프로세스들에 대한 정보 보여줌
+* kill [pid] 프로세스 강제종료
+    * kill명령어를 당한 프로세스 재시작 명령어
+    * sudo systemctl restart [프로세스이름]
+* ps -ef에서 특정 프로세스의PID만 꺼내는법
+    * ps -ef | grep [프로세스이름]|grep -v grep| awk '{print $2}'
+    * 여기에 백틱넣어서 프로세스 kill가능
 
 경로 이동시 절대경로로 갈 경우 맨 앞에 '/'를 붙여줘야 한다
+
+데몬프로세스란 항상 실행중인 프로그램
