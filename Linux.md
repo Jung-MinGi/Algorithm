@@ -52,6 +52,7 @@ private key           |                 private key (비밀키)
     * ls -al (ls -l+ls --all)가 합쳐진 명령어
 * mkdir 폴더생성시 사용
 * touch 파일생성시 사용
+* cat [파일명] 파일내용볼 수 있음
 * rm 파일삭제
 * rm -r 폴더삭제
 * cp [복사파일이름] [새로운이름]
@@ -70,7 +71,20 @@ private key           |                 private key (비밀키)
 * ps -ef에서 특정 프로세스의PID만 꺼내는법
     * ps -ef | grep [프로세스이름]|grep -v grep| awk '{print $2}'
     * 여기에 백틱넣어서 프로세스 kill가능
+* vi [파일명] vi에디터로 들어가기 
+* sudo passwd root 최고관리자 비밀번호 변경하기
+* sudo chmod 777 권한부여 (r:4, w:2, x:1)
+* sudo chown [소유자]:[그룹] [파일명] 그룹에 권한부여가능
+* sudo find / [파일명] 파일찾기
+* sudo 
+
 
 경로 이동시 절대경로로 갈 경우 맨 앞에 '/'를 붙여줘야 한다
 
 데몬프로세스란 항상 실행중인 프로그램
+
+## 배포하기
+1 깃헙에서 프로젝트 다운받기
+2 mvnw에 실행권한주기
+3 mvnw로 프로젝트를 jar파일로 변경
+4 java로 jar실행
