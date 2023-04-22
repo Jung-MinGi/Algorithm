@@ -76,15 +76,35 @@ private key           |                 private key (비밀키)
 * sudo chmod 777 권한부여 (r:4, w:2, x:1)
 * sudo chown [소유자]:[그룹] [파일명] 그룹에 권한부여가능
 * sudo find / [파일명] 파일찾기
-* sudo 
-
+* sudo apt-cache search jdk | grep openjdk-11 --jdk중에서도 11버전만 보고싶을때
+* sudo apt install [파일명]
 
 경로 이동시 절대경로로 갈 경우 맨 앞에 '/'를 붙여줘야 한다
 
 데몬프로세스란 항상 실행중인 프로그램
 
 ## 배포하기
-1 깃헙에서 프로젝트 다운받기
-2 mvnw에 실행권한주기
-3 mvnw로 프로젝트를 jar파일로 변경
-4 java로 jar실행
+1 ec2서버에서 clone
+
+2 gradlw에 실행권한주기
+
+3 jdk설치하기
+
+4 mysql설치
+>sudo apt install mysql-server-8.0
+
+5 gradlw로 프로젝트를 jar파일로 변경
+>./gradlw build  
+
+앞에 ./를 붙여야됨 안붙이면 환경변수를 찾는다
+
+```
+jar {
+    enabled = false
+}
+```
+build.gradle에 넣어줘야 jar파일 한개만 생성
+
+6 java로 변경된 jar파일 실행
+> java -jar blog-0.0.1-SNAPSHOT.jar
+
