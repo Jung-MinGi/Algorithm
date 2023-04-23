@@ -78,6 +78,8 @@ private key           |                 private key (비밀키)
 * sudo find / [파일명] 파일찾기
 * sudo apt-cache search jdk | grep openjdk-11 --jdk중에서도 11버전만 보고싶을때
 * sudo apt install [파일명]
+* tail -f nohup.out -- 로그 모니터링 하는 법
+
 
 경로 이동시 절대경로로 갈 경우 맨 앞에 '/'를 붙여줘야 한다
 
@@ -107,4 +109,7 @@ build.gradle에 넣어줘야 jar파일 한개만 생성
 
 6 java로 변경된 jar파일 실행
 > java -jar blog-0.0.1-SNAPSHOT.jar
+
+7 백그라운드로 실행하기 
+>nohup java -jar blog-0.0.1-SNAPSHOT.jar &
 
