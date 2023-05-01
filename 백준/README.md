@@ -2,7 +2,7 @@
 
 #### 구현
 ***
-* [우유축제](https://github.com/MingGi-Jung/Algorithm/edit/main/%EB%B0%B1%EC%A4%80/%EA%B5%AC%ED%98%84/14720-%EC%9A%B0%EC%9C%A0%EC%B6%95%EC%A0%9C.java)
+* [우유축제](https://github.com/Jung-MinGi/TIL/blob/main/%EB%B0%B1%EC%A4%80/%EA%B5%AC%ED%98%84/14720-%EC%9A%B0%EC%9C%A0%EC%B6%95%EC%A0%9C.java)
   - 데이터 크기가 작아(1000개) 시간복잡도 O(N^2)까지 사용 가능
 * [OX퀴즈](https://github.com/Jung-MinGi/TIL/blob/main/%EB%B0%B1%EC%A4%80/%EA%B5%AC%ED%98%84/8958-OX%ED%80%B4%EC%A6%88.java)
 
