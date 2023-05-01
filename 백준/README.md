@@ -21,8 +21,8 @@
 #### 이분탐색
 * [게임](https://github.com/Jung-MinGi/TIL/blob/main/%EB%B0%B1%EC%A4%80/%EC%9D%B4%EB%B6%84%ED%83%90%EC%83%89/1072-%EA%B2%8C%EC%9E%84.java)💥💥💥
 * 먹을 것인가 먹힐 것인가
-  * 데이터크기가 20,000으로 이중포문쓰면 시간초과 난다[코드보기](https://github.com/Jung-MinGi/TIL/blob/b311a94e75a6c592af90831d2244b0dba198db8f/%EB%B0%B1%EC%A4%80/%EC%9D%B4%EB%B6%84%ED%83%90%EC%83%89/7795-%EB%A8%B9%EC%9D%84%20%EA%B2%83%EC%9D%B8%EA%B0%80%20%EB%A8%B9%ED%9E%90%20%EA%B2%83%EC%9D%B8%EA%B0%80.java#L30)
-  * 이분탐색 이용한 코드[코드보기](https://github.com/Jung-MinGi/TIL/blob/5a167a3cfb3c00893ccc14e87ceed472f413f6d5/%EB%B0%B1%EC%A4%80/%EC%9D%B4%EB%B6%84%ED%83%90%EC%83%89/7795-%EB%A8%B9%EC%9D%84%20%EA%B2%83%EC%9D%B8%EA%B0%80%20%EB%A8%B9%ED%9E%90%20%EA%B2%83%EC%9D%B8%EA%B0%80.java#L66)
+  * 데이터크기가 20,000으로 이중포문쓰면 시간초과 난다[코드보기](https://github.com/Jung-MinGi/TIL/blob/4f9b5f43f79caf6f1033dc221d5162c64d577353/%EB%B0%B1%EC%A4%80/%EC%9D%B4%EB%B6%84%ED%83%90%EC%83%89/7795-%EB%A8%B9%EC%9D%84%20%EA%B2%83%EC%9D%B8%EA%B0%80%20%EB%A8%B9%ED%9E%90%20%EA%B2%83%EC%9D%B8%EA%B0%80.java#L30)
+  * 이분탐색 이용한 코드[코드보기](https://github.com/Jung-MinGi/TIL/blob/4f9b5f43f79caf6f1033dc221d5162c64d577353/%EB%B0%B1%EC%A4%80/%EC%9D%B4%EB%B6%84%ED%83%90%EC%83%89/7795-%EB%A8%B9%EC%9D%84%20%EA%B2%83%EC%9D%B8%EA%B0%80%20%EB%A8%B9%ED%9E%90%20%EA%B2%83%EC%9D%B8%EA%B0%80.java#L66)
 #### 정렬
 ***
 * [숫자카드](https://github.com/MingGi-Jung/Algorithm/blob/main/%EB%B0%B1%EC%A4%80/%EC%A0%95%EB%A0%AC/10815-%EC%88%AB%EC%9E%90%20%EC%B9%B4%EB%93%9C.java)
