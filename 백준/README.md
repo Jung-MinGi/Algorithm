@@ -20,6 +20,11 @@
   - 수행시간이 거슬러 줄 수 있는 돈의 개수에 비례하므로 시간복잡도가 O(N)인 코드 
 ***
 #### 이분탐색
+* [k번째 수]()
+  * 상한은 low,high가 key값을 초과하는 첫번째 값에 수렴
+  * 하한은 low,high가 key값이상인 값에 수렴
+  * int형 변수 결과 값을 long타입에 담을 수 없음 
+  이건 에러표시도 안나서 주의해야됨💥💥💥💥💥
 * [나무자르기](https://github.com/Jung-MinGi/TIL/blob/main/%EB%B0%B1%EC%A4%80/%EC%9D%B4%EB%B6%84%ED%83%90%EC%83%89/2805-%EB%82%98%EB%AC%B4%EC%9E%90%EB%A5%B4%EA%B8%B0.java)
   * upperbound문제
 * [수 찾기]()
