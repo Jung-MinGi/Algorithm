@@ -20,7 +20,7 @@
   - 수행시간이 거슬러 줄 수 있는 돈의 개수에 비례하므로 시간복잡도가 O(N)인 코드 
 ***
 #### 이분탐색
-* [k번째 수]()
+* [k번째 수](https://github.com/Jung-MinGi/TIL/blob/main/%EB%B0%B1%EC%A4%80/%EC%9D%B4%EB%B6%84%ED%83%90%EC%83%89/1300-k%EB%B2%88%EC%A8%B0%EC%88%98.java)
   * 상한은 low,high가 key값을 초과하는 첫번째 값에 수렴
   * 하한은 low,high가 key값이상인 값에 수렴
   * int형 변수 결과 값을 long타입에 담을 수 없음 
