@@ -20,7 +20,7 @@
   - 수행시간이 거슬러 줄 수 있는 돈의 개수에 비례하므로 시간복잡도가 O(N)인 코드 
 ***
 #### 이분탐색
-* [예산]()
+* [예산](https://github.com/Jung-MinGi/TIL/blob/main/%EB%B0%B1%EC%A4%80/%EC%9D%B4%EB%B6%84%ED%83%90%EC%83%89/2512-%EC%98%88%EC%82%B0.java)
   * 이분탐색에서 high값 설정 잘 해야하는 이유 
 * [k번째 수](https://github.com/Jung-MinGi/TIL/blob/main/%EB%B0%B1%EC%A4%80/%EC%9D%B4%EB%B6%84%ED%83%90%EC%83%89/1300-k%EB%B2%88%EC%A8%B0%EC%88%98.java)
   * 상한은 low,high가 key값을 초과하는 첫번째 값에 수렴
@@ -29,7 +29,7 @@
   이건 에러표시도 안나서 주의해야됨💥💥💥💥💥
 * [나무자르기](https://github.com/Jung-MinGi/TIL/blob/main/%EB%B0%B1%EC%A4%80/%EC%9D%B4%EB%B6%84%ED%83%90%EC%83%89/2805-%EB%82%98%EB%AC%B4%EC%9E%90%EB%A5%B4%EA%B8%B0.java)
   * upperbound문제
-* [수 찾기]()
+* [수 찾기](https://github.com/Jung-MinGi/TIL/blob/main/%EB%B0%B1%EC%A4%80/%EC%9D%B4%EB%B6%84%ED%83%90%EC%83%89/1920.java)
 * [게임](https://github.com/Jung-MinGi/TIL/blob/main/%EB%B0%B1%EC%A4%80/%EC%9D%B4%EB%B6%84%ED%83%90%EC%83%89/1072-%EA%B2%8C%EC%9E%84.java)💥💥💥
 * 먹을 것인가 먹힐 것인가
   * 데이터크기가 20,000으로 이중포문쓰면 시간초과 난다[코드보기](https://github.com/Jung-MinGi/TIL/blob/4f9b5f43f79caf6f1033dc221d5162c64d577353/%EB%B0%B1%EC%A4%80/%EC%9D%B4%EB%B6%84%ED%83%90%EC%83%89/7795-%EB%A8%B9%EC%9D%84%20%EA%B2%83%EC%9D%B8%EA%B0%80%20%EB%A8%B9%ED%9E%90%20%EA%B2%83%EC%9D%B8%EA%B0%80.java#L30)
@@ -50,6 +50,6 @@ Comparator인터페이스를 이용해서 내가 원하는 정렬조건을 만�
 찾는 키가 맵에 있으면 요소값을 반환 없으면 기본값 반환
 ***
 #### 브루트포스
-* [블랙잭]()
+* [블랙잭](https://github.com/Jung-MinGi/TIL/blob/main/%EB%B0%B1%EC%A4%80/%EB%B8%8C%EB%A3%A8%ED%8A%B8%ED%8F%AC%EC%8A%A4/2789-%EB%B8%94%EB%9E%99%EC%9E%AD.java)
 
   
