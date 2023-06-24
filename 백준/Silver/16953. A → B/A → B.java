@@ -21,6 +21,10 @@ public class Main {
             int size = q.size();
              for(int i=0; i<size; i++){
                 Long poll = q.poll();
+                  if (poll == k) {
+                    temp = k;
+                    break;
+                }
                 if(!q.contains(poll)){
                     a = poll*2;
                     b = (poll*10)+1;
