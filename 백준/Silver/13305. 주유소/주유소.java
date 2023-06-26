@@ -1,7 +1,7 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.*;
+import java.util.StringTokenizer;
 
 public class Main {
     public static void main(String[] args) throws IOException {
@@ -17,7 +17,7 @@ public class Main {
         for(int i=0; i<price.length; i++){
             price[i]=Integer.parseInt(st.nextToken());
         }
-        long answer=0;
+        Long answer=0L;
         int minPrice=Integer.MAX_VALUE;
         for(int i=0; i<len.length; i++){
                 if(price[i] < minPrice){
