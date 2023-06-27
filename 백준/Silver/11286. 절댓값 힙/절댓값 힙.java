@@ -16,7 +16,14 @@ public class Main {
                 }else if(a1 < b1){
                     return a1-b1;
                 }else{
+                    if(a>b){
+                        return 1;
+                    }else if(a<b){
+                        return -1;
+                    }else{
+
                         return a-b;
+                    }
                 }
             }
         });
