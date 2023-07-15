@@ -26,42 +26,35 @@ public class Main {
                 graph[i][j] =  Integer.parseInt(st.nextToken());
             }
         }
-        dfs(0);
+        dfs(1,0);
         System.out.println(answer);
     }
-    static void dfs(int depth){
-        if(depth == arr.length){//재귀 탈출
+    static void dfs(int start,int depth){
+        if(depth == n/2){//재귀 탈출
             int home=0;
             int away=0;
-            int[] anotherTeam = new int[n+1];
-            for (int i : arr) {
-                anotherTeam[i]++;
-            }
-            for(int i=0; i<arr.length-1; i++){
-                for(int j=i+1; j<arr.length; j++){
-                    home += graph[arr[i]][arr[j]]+graph[arr[j]][arr[i]];
-                }
-            }
-            
-            for(int i=1; i<anotherTeam.length-1; i++){
-                if(anotherTeam[i]==1) continue;
-                for(int j=i+1; j<anotherTeam.length; j++){
-                    if(anotherTeam[j]==1)continue;
-                    away += graph[i][j]+graph[j][i];
+            for(int i=1; i<visit.length-1; i++){
+                for(int j=i+1; j<visit.length; j++){
+                    if(visit[i]==true && visit[j]==true){
+                        home += graph[i][j]+graph[j][i];
+                    }else if(visit[i]==false && visit[j]==false){
+                        away += graph[i][j]+graph[j][i];
+                    }
                 }
             }
             answer = Math.min(answer,Math.abs(home-away));
-            
+            if(answer==0){
+                System.out.println(answer);
+                System.exit(0);
+            }
             return;
         }
 
-        for (int i=1; i<=n; i++) {
-            if(depth>0 && arr[depth-1] > i) continue;
+        for (int i=start; i<=n; i++) {
+
             if(!visit[i]){
-                arr[depth]=i;
                 visit[i]=true;
-                dfs(depth+1);
-                if(answer==0) break;
+                dfs(i+1,depth+1);
                 visit[i]=false;
             }
         }
