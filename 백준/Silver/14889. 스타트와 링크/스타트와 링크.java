@@ -51,6 +51,7 @@ public class Main {
                 }
             }
             answer = Math.min(answer,Math.abs(home-away));
+            
             return;
         }
 
@@ -60,6 +61,7 @@ public class Main {
                 arr[depth]=i;
                 visit[i]=true;
                 dfs(depth+1);
+                if(answer==0) break;
                 visit[i]=false;
             }
         }
