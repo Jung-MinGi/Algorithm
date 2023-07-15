@@ -22,16 +22,16 @@ public class Main {
         arr = new int[m];
         visit = new boolean[n+1];
         dfs(0);
-
+        System.out.println(sb);
     }
     static void dfs(int depth){
+        
 
         if(depth == m){//재귀 탈출
-            StringBuilder sb = new StringBuilder();
             for (int i : arr) {
                 sb.append(i).append(' ');
             }
-            System.out.println(sb);
+            sb.append('\n');
             return;
         }
 
