@@ -21,10 +21,10 @@ public class Main {
         m = Integer.parseInt(st.nextToken());
         arr = new int[m];
         visit = new boolean[n+1];
-        dfs(0);
+        dfs(1,0);
         System.out.println(sb);
     }
-    static void dfs(int depth){
+    static void dfs(int startIndex, int depth){
 
 
         if(depth == m){//재귀 탈출
@@ -35,14 +35,12 @@ public class Main {
             return;
         }
 
-        for(int i=1; i<=n; i++){
-            if(depth>0 && arr[depth-1] > i){
-                continue;
-            }
+        for(int i=startIndex; i<=n; i++){
+
             if(!visit[i]){
                 visit[i]=true;
                 arr[depth]=i;
-                dfs(depth+1);
+                dfs(i+1,depth+1);
                 visit[i]=false;
             }
         }
