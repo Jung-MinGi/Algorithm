@@ -27,8 +27,8 @@ public class Main {
                 System.out.println(sb);
                 break;
             }
-            arr = new int[n];
-            visit = new boolean[n];
+            arr = new int[n+1];
+            visit = new boolean[n+1];
             input = new int[n];
             for (int i = 0; i < n; i++) {
                 input[i] = Integer.parseInt(st.nextToken());
@@ -51,11 +51,11 @@ public class Main {
         }
 
         for(int i=at; i<input.length; i++){
-            if(!visit[depth]){
+            if(!visit[i]){
                 arr[depth]=input[i];
-                visit[depth]=true;
+                visit[i]=true;
                 dfs(i+1,depth+1);
-                visit[depth]=false;
+                visit[i]=false;
             }
         }
     }
