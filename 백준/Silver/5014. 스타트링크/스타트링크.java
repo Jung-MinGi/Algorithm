@@ -23,28 +23,12 @@ public class Main {
             d = Integer.parseInt(st.nextToken());
         }
         visit = new boolean[f + 1];
-        //강호가 회사보다 아래에 있으면서 u가 0일때
-        if (s < g && u == 0 && d != 0) {
+
+        int answer = bfs(s, 0, u, d);
+        if (visit[g]) {
+            System.out.println(answer);
+        } else {
             System.out.println("use the stairs");
-        }
-        //강호가 회사보다 위에 있으면서 d가 0일떄
-        else if (s > g && d == 0&& u != 0) {
-            System.out.println("use the stairs");
-        }
-        else if (s + u > f && s - d < 1) {
-            System.out.println("use the stairs");
-        }
-        else if (s != g && u == 0 && d == 0) {
-            System.out.println("use the stairs");
-        } else if(s == g){
-            System.out.println(0);
-        }else{
-            int answer = bfs(s, 0, u, d);
-            if(visit[g]){
-                System.out.println(answer);
-            }else{
-                System.out.println("use the stairs");
-            }
         }
     }
 
@@ -55,24 +39,25 @@ public class Main {
         /**
          * 80 45 32 5 19
          */
+        if(idx == g) return depth;
         while (!q.isEmpty()) {
             int size = q.size();
             for (int i = 0; i < size; i++) {
                 Integer poll = q.poll();
-
                 int a = poll + u;
                 int b = poll - d;
-                if (a > 0 && a <= f && !visit[a] && a != poll) {
+                if ( a <= f && !visit[a] ) {
                     visit[a] = true;
                     q.offer(a);
                 }
-                if (b > 0 && b <= f && !visit[b] && b != poll) {
+                if (b > 0 && !visit[b]) {
                     visit[b] = true;
                     q.offer(b);
                 }
             }
-            depth+=1;
+            depth += 1;
             if (visit[g]) return depth;
-        }return depth;
+        }
+        return depth;
     }
 }
