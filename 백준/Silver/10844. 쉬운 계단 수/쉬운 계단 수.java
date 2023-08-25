@@ -1,35 +1,51 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.lang.reflect.Array;
+import java.util.Arrays;
 
 public class Main {
-    private static Long[][] dp;
+    static final int val = 1000000000;
+    static int[][] dp = new int[101][10];
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(br.readLine());
-        dp = new Long[n+1][10];
-        for(int i=0; i<10; i++){
-           dp[1][i]=1L;
+        for (int i = 1; i < 101; i++) {
+            Arrays.fill(dp[i],-1);
         }
-        long sum=0;
-        for(int i=1; i<10; i++){
-           sum+= recur(n,i);
-        }
-        System.out.println(sum  % 1000000000);
-    }
-    public static long recur(int a,int b){//a는 현재 몇번째 자릿수위치인지 b는 그 자릿수에 위치한 값
-        if(a == 1){
-            return dp[a][b];
-        }
-        if(dp[a][b] == null){
-            if(b == 0){
-                dp[a][b] = recur(a-1,1);
-            }else if(b == 9){
-                dp[a][b] = recur(a-1,1);
-            }else {
-                dp[a][b] = recur(a-1,b+1) + recur(a-1,b-1);
+        Arrays.fill(dp[1], 1);
+        for(int i=2; i<101; i++){
+            for(int j=0; j<10; j++){
+                if(j==0){
+                    dp[i][j]=dp[i-1][j+1]%val;
+                }else if(j==9){
+                    dp[i][j]=dp[i-1][j-1]%val;
+                }else{
+                    dp[i][j]=((dp[i-1][j+1]%val)+(dp[i-1][j-1]%val)%val);
+                }
             }
         }
-        return dp[a][b] % 1000000000;
+
+        long sum=0;
+        for(int i=1; i<10; i++){
+            sum+=dp[n][i];
+        }
+        int a=4;
+        System.out.println(sum%val);
+
     }
+
+//    static int dp(int x, int y) {
+//        if (dp[x][y] == -1) {
+//            if (y == 9) {
+//                dp[x][y] = dp(x - 1, y - 1)%val;
+//            } else if(y==0){
+//                dp[x][y]= (dp(x - 1, y + 1)%val);
+//            }else {
+//                dp[x][y] = ((dp(x - 1, y - 1)%val)  + (dp(x - 1, y + 1)%val)%val);
+//            }
+//        }
+//    return dp[x][y];
+    
 }
