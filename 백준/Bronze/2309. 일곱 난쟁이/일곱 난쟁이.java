@@ -28,10 +28,10 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         arr = new Integer[9];
         dp = new Integer[9];
+        
         for (int i = 0; i < arr.length; i++) {
             arr[i] = Integer.parseInt(br.readLine());
         }
-        boolean flag=false;
         Arrays.sort(arr);
         sb = new StringBuilder();
         for (int i = 0; i < arr.length - 1; i++) {
@@ -49,13 +49,12 @@ public class Main {
                         }
                     }
                     System.out.println(sb);
-                    flag=true;
-                    break;
+                    return;
                 }else{
                     sum+=arr[j];
                 }
             }
-            if(flag) break;
+            
         }
     }
 }
