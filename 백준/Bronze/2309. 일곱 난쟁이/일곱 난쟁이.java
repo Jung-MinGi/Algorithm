@@ -2,38 +2,61 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.Arrays;
+import java.util.StringTokenizer;
 
+/**
+ * dp[i][0] = 96
+ * dp[i][0] = 172
+ * dp[i][0] = 185
+ * dp[i][0] = 110
+ * dp[i][0] = 178
+ * dp[i][0] = 188
+ * dp[i][0] = 156
+ * dp[i][0] = 221
+ * dp[i][0] = 231
+ */
 public class Main {
+    static Integer[] dp;
+
+    static Integer[] arr;
+    static boolean[] visit;
+    static StringTokenizer st;
+    static StringBuilder sb;
+    static int max;
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        int[] arr = new int[9];
-        int length=0;
-        for(int i=0; i<9; i++){
-            arr[i]=Integer.parseInt(br.readLine());
-            length += arr[i];
+        arr = new Integer[9];
+        dp = new Integer[9];
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = Integer.parseInt(br.readLine());
         }
+        boolean flag=false;
         Arrays.sort(arr);
-        int out=0;
-        for(int i=0; i<8; i++){
-            for(int j=i+1; j<9; j++){
-                if(length-arr[i]-arr[j] == 100){
-                    arr[i]=0;
-                    arr[j]=0;
-                    out=1;
+        sb = new StringBuilder();
+        for (int i = 0; i < arr.length - 1; i++) {
+            int sum = 0;
+            for (Integer a : arr) {
+                sum += a;
+            }
+            sum -= arr[i];
+            for(int j=i+1; j<arr.length; j++){
+                sum -= arr[j];
+                if (sum == 100) {
+                    for (int k = 0; k < 9; k++) {
+                        if (k != i && k != j) {
+                            sb.append(arr[k]).append('\n');
+                        }
+                    }
+                    System.out.println(sb);
+                    flag=true;
                     break;
+                }else{
+                    sum+=arr[j];
                 }
             }
-            if(out == 1){
-                break;
-            }
+            if(flag) break;
         }
-        StringBuilder sb = new StringBuilder();
-        for (int i : arr) {
-            if(i != 0){
-                sb.append(i).append('\n');
-            }
-        }
-        System.out.println(sb);
     }
 }
+
