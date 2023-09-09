@@ -78,11 +78,11 @@ public class Main {
             sb.append('\n');
             return;
         }
-        for (int i = idx; i <= N; i++) {
+        for (int i = idx; i <= N; i++) { //int i=1로 두면 오름차순으로 안됨
             if (!visit[i]) {
                 arr[depth] = i;
                 visit[i] = true;
-                backTracking(idx+1,depth + 1, M);//재귀로 넘길때 idx값을 +1해주면 오름차순으로 뽑힘
+                backTracking(idx+1,depth + 1, M); //재귀로 넘길때 idx값을 +1해주면 오름차순으로 뽑힘
                 visit[i] = false;
             }
         }
