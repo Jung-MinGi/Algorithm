@@ -20,13 +20,11 @@ public class Main {
         int a =Integer.parseInt(s);
         int num=9;
         int len=0;
-        sb = new StringBuilder();
-     
+ 
             for(int i=1; i<=s.length(); i++){
                 if(i==s.length()){
                     int temp = (int)Math.pow(10,i-1);
                     len+=i*(a-(temp-1));
-
                     continue;
                 }
                 len+=i*num;
