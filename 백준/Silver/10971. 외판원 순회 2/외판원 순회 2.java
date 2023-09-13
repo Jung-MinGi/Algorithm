@@ -1,63 +1,62 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
-import java.util.HashSet;
-import java.util.StringTokenizer;
+import java.util.*;
+
 
 public class Main {
-    static int n;
-    static int[] arr;
+
+    static int[][] arr;
+    static int[] dp;
     static boolean[] visit;
-    static int[][] w;
-    static long min = Long.MAX_VALUE;
-   static StringBuilder sb = new StringBuilder();
+    static StringTokenizer st;
+    static StringBuilder sb;
+    static int n;
+    static int m = Integer.MAX_VALUE;
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         n = Integer.parseInt(br.readLine());
-        w = new int[n][n];
-        StringTokenizer st;
-        for(int i=0; i<n; i++){
+        arr = new int[n + 1][n + 1];
+        for (int i = 1; i <= n; i++) {
             st = new StringTokenizer(br.readLine());
-            for(int j=0; j<n; j++){
-                w[i][j] = Integer.parseInt(st.nextToken());
+            for (int j = 1; j <= n; j++) {
+                arr[i][j] = Integer.parseInt(st.nextToken());
             }
         }
-        arr = new int[n];
-        visit = new boolean[n];
-        dfs(0);
-        System.out.println(min);
-        }
-    static void dfs(int depth){
-        if(depth == n){
-            int sum=0;
-            for (int i=0; i<n; i++) {
-                if (i != n - 1 && w[arr[i]][arr[i + 1]] != 0) {
-                    sum += w[arr[i]][arr[i + 1]];
-                } else if(i == n-1 && w[arr[i]][arr[0]] != 0){
-                    sum += w[arr[i]][arr[0]];
-                } else{
-                    return;
-                }
-            }
+        visit = new boolean[n + 1];
+        dp = new int[n];
+        backTracking(0);
+        System.out.println(m);
+    }
 
-            min = Math.min(min, sum);
-            if(sum == 5){
-                for (int i : arr) {
-                    System.out.println("i = " + i);
-                }
-            }
+    static void backTracking(int depth) {
+        if (depth == n) {
+            int sum=0;
+           for(int i=0; i<dp.length; i++){
+
+               if(i==dp.length-1){
+                   int x = arr[dp[i]][dp[0]];
+                   if(x==0) return;
+                   sum+=x;
+                   continue;
+               }
+               int a = arr[dp[i]][dp[i + 1]];
+               if(a==0) return;
+               sum+=a;
+           }
+           m = Math.min(m,sum);
             return;
         }
-
-        for(int i=0; i<n; i++){
+        for (int i = 1; i <= n; i++) {
             if (!visit[i]) {
-                arr[depth]=i;
-                visit[i]=true;
-                dfs(depth+1);
-                visit[i]=false;
+                visit[i] = true;
+                dp[depth] =i;
+                backTracking(depth + 1);
+                visit[i] = false;
             }
         }
     }
-
 }
+
+
