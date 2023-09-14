@@ -1,62 +1,60 @@
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.io.IOException;
-import java.util.Arrays;
 import java.util.StringTokenizer;
 
 public class Main {
+    static int[][] arr;
+    static int[] dp;
+    static int n;
+    static int m=Integer.MAX_VALUE;
+    static boolean[] visit;
+    static StringTokenizer st;
 
-    public static int[] arr;
-    public static boolean[] visit;
-    static int n,m;
-    static int[][] graph;
-
-    static int answer=Integer.MAX_VALUE;
-    public static void main(String[] args) throws IOException {
-
+    public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         n = Integer.parseInt(br.readLine());
-        arr = new int[n/2];
-        visit = new boolean[n+1];
-        graph = new int[n+1][n+1];
-        StringTokenizer st;
-        for(int i=1; i<=n; i++){
+        dp = new int[n / 2];
+        visit = new boolean[n + 1];
+        arr = new int[n + 1][n + 1];
+        for (int i = 1; i <= n; i++) {
             st = new StringTokenizer(br.readLine());
-            for(int j=1; j<=n; j++){
-                graph[i][j] =  Integer.parseInt(st.nextToken());
+            for (int j = 1; j <= n; j++) {
+                arr[i][j] = Integer.parseInt(st.nextToken());
             }
         }
-        dfs(1,0);
-        System.out.println(answer);
+        backTracking(1,0);
+        System.out.println(m);
     }
-    static void dfs(int start,int depth){
-        if(depth == n/2){//재귀 탈출
-            int home=0;
-            int away=0;
-            for(int i=1; i<visit.length-1; i++){
-                for(int j=i+1; j<visit.length; j++){
-                    if(visit[i]==true && visit[j]==true){
-                        home += graph[i][j]+graph[j][i];
-                    }else if(visit[i]==false && visit[j]==false){
-                        away += graph[i][j]+graph[j][i];
-                    }
+
+    static void backTracking(int idx,int depth) {
+        if (depth == n / 2) {
+            int start = 0;
+            int link = 0;
+            int[] linkArr = new int[n / 2];
+            int cnt = 0;
+            for (int i = 1; i <= n; i++) {
+                if (!visit[i]) {
+                    linkArr[cnt] = i;
+                    cnt++;
                 }
             }
-            answer = Math.min(answer,Math.abs(home-away));
-            if(answer==0){
-                System.out.println(answer);
-                System.exit(0);
+            for(int i=0; i<n/2-1; i++){
+                for(int j=i+1; j<n/2; j++){
+                    start+=arr[dp[i]][dp[j]]+arr[dp[j]][dp[i]];
+                    link+=arr[linkArr[i]][linkArr[j]]+arr[linkArr[j]][linkArr[i]];
+
+                }
             }
+            m = Math.min(m, Math.abs(start-link));
             return;
         }
-
-        for (int i=start; i<=n; i++) {
-
-            if(!visit[i]){
-                visit[i]=true;
-                dfs(i+1,depth+1);
-                visit[i]=false;
+            for (int i = idx; i <= n; i++) {
+                if (!visit[i]) {
+                    visit[i] = true;
+                    dp[depth] = i;
+                    backTracking(i,depth + 1);
+                    visit[i] = false;
+                }
             }
         }
     }
-}
