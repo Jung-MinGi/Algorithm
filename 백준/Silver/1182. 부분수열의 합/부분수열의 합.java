@@ -1,63 +1,51 @@
 import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.io.IOException;
-import java.util.Arrays;
+import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 public class Main {
-
-    public static int[] arr;
-    public static int[] input;
-    public static boolean[] visit;
-    static int n;
+    static int[] arr;
+    static boolean[] visit;
+    static int[] dp;
+    static StringTokenizer st;
     static int s;
-    static int answer;
-
-    static int depth = 0;
-    static int m = 1;
+    static int n;
+    static int answer = 0;
 
     public static void main(String[] args) throws IOException {
-
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        StringTokenizer st = new StringTokenizer(br.readLine());
+        st = new StringTokenizer(br.readLine());
         n = Integer.parseInt(st.nextToken());
         s = Integer.parseInt(st.nextToken());
         st = new StringTokenizer(br.readLine());
-        input = new int[n];
-        for (int i = 0; i < n; i++) {
-            input[i] = Integer.parseInt(st.nextToken());
+        arr = new int[n + 1];
+        visit = new boolean[n + 1];
+        dp = new int[n];
+        for (int i = 1; i < arr.length; i++) {
+            arr[i] = Integer.parseInt(st.nextToken());
         }
-
-        arr = new int[n];
-        visit = new boolean[n];
-        for (int i = 0; i < n; i++) {
-            dfs(0,0);
-            m++;
+        for (int i = 1; i <= n; i++) {
+            soultion(i, 1, 0);
         }
-
         System.out.println(answer);
+
     }
 
-    static void dfs(int at,int depth) {
-        if (depth == m) {
+    static void soultion(int a, int idx, int depth) {
+        if (depth == a) {
             int sum = 0;
-            for (int i : arr) {
-                if(i==0) continue;
+            for (int i : dp) {
                 sum += i;
             }
-
-            if (sum == s) {
-                answer++;
-            }
+            if (sum == s) answer++;
             return;
         }
-
-        for (int i = at; i < input.length; i++) {
+        for (int i = idx; i <= n; i++) {
             if (!visit[i]) {
-                arr[depth] = input[i];
-                visit[depth] = true;
-                dfs(i+1,depth + 1);
-                visit[depth] = false;
+                visit[i] = true;
+                dp[depth] = arr[i];
+                soultion(a, i + 1, depth + 1);
+                visit[i] = false;
             }
         }
     }
