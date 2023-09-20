@@ -3,78 +3,68 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.*;
 
-
 public class Main {
+    static ArrayList<Integer>[] arr;
+    static boolean[] visit;
+    static ArrayList<Integer> dp;
+    static int n, m, k;
+    static boolean flag = false;
+    static StringBuilder sb = new StringBuilder();
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
-        ArrayList<ArrayList<Integer>> graph = new ArrayList<>();
-        //노드 개수
-        int n = Integer.parseInt(st.nextToken());
-        //간선 개수
-        int k = Integer.parseInt(st.nextToken());
-        //탐색시작 노드 번호
-        int v = Integer.parseInt(st.nextToken());
-        //노드 방문 여부 확인 배열
-        boolean[] visited = new boolean[n+1];
-        for (int i = 0; i < n+1; i++) {
-            graph.add(new ArrayList<Integer>());
+        n = Integer.parseInt(st.nextToken());
+        m = Integer.parseInt(st.nextToken());//간선정보
+        k = Integer.parseInt(st.nextToken());//시작 정점
+        dp = new ArrayList<>();
+        arr = new ArrayList[n + 1];
+        visit = new boolean[n + 1];
+        for (int i = 1; i <= n; i++) {
+            arr[i] = new ArrayList<>();
         }
-
-        for(int i=0; i<k; i++){
+        for (int i = 0; i < m; i++) {
             st = new StringTokenizer(br.readLine());
             int a = Integer.parseInt(st.nextToken());
             int b = Integer.parseInt(st.nextToken());
-            graph.get(a).add(b);
-            graph.get(b).add(a);
-
+            arr[a].add(b);
+            arr[b].add(a);
         }
-        for (ArrayList<Integer> list : graph) {
-            Collections.sort(list,Collections.reverseOrder());
+        for (ArrayList<Integer> integers : arr) {
+           if(integers!=null)Collections.sort(integers);
         }
-        System.out.println(dfs(v,graph,visited));
-        visited = new boolean[n+1];
-        for (ArrayList<Integer> list : graph) {
-            Collections.sort(list);
-        }
-        System.out.println(bfs(v,graph,visited));
-
+        dfs(k);
+        sb.append('\n');
+        visit = new boolean[n + 1];
+        bfs(k);
+        System.out.println(sb);
     }
-   public static String bfs(int v, ArrayList<ArrayList<Integer>> list, boolean[] visit){
+
+    static void bfs(int index) {
         Queue<Integer> q = new LinkedList<>();
-        q.offer(v);
-        visit[v]=true;
-       StringBuilder sb = new StringBuilder();
-        while(!q.isEmpty()){
+          visit[index]=true;
+        q.add(index);
+        while (!q.isEmpty()) {
             Integer poll = q.poll();
-            sb.append(poll).append(" ");
-                for(int i=0; i<list.get(poll).size(); i++){
-                    Integer a = list.get(poll).get(i);
-                    if(!visit[a]){
-                        q.add(a);
-                        visit[a]=true;
-                    }
+            sb.append(poll).append(' ');
+            for (int i = 0; i < arr[poll].size(); i++) {
+                Integer a = arr[poll].get(i);
+                if(!visit[a]){
+                    q.add(a);
+                    visit[a]=true;
+                }
             }
         }
-    return sb.toString();
     }
 
-    public static String dfs(int v, ArrayList<ArrayList<Integer>> list, boolean[] visit){
-        Stack<Integer> stack = new Stack<>();
-        stack.push(v);
-        StringBuilder sb = new StringBuilder();
-        while(!stack.isEmpty()){
-            Integer pop = stack.pop();
-            if(visit[pop]){
-                continue;
-            }
-            visit[pop] = true;
-            sb.append(pop+" ");
-            for(int i=0; i<list.get(pop).size(); i++){
-                stack.push(list.get(pop).get(i));
+    static void dfs(int index) {
+        sb.append(index).append(' ');
+        visit[index] = true;
+        for (int i = 0; i < arr[index].size(); i++) {
+            Integer a = arr[index].get(i);
+            if (!visit[a]) {
+                dfs(a);
             }
         }
-    return sb.toString();
     }
 }
