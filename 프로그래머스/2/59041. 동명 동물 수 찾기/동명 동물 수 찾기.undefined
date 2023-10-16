@@ -1,7 +1,7 @@
 -- 코드를 입력하세요
 SELECT 
 NAME
-,COUNT(NAME) as COUNT
+,count(NAME) as COUNT
 from ANIMAL_INS group by NAME 
-HAVING count(NAME)>1
+having COUNT(NAME)>=2
 order by NAME;
