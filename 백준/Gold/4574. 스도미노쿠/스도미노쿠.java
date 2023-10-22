@@ -37,16 +37,16 @@ class Main {
                 arr[s.charAt(0) - 'A'][s.charAt(1) - '1'] = i;
             }
             sb.append("Puzzle ").append(++cnt).append('\n');
-            soultion(0);
+            soultion(0,0);
 
         }
         System.out.println(sb);
     }
 
-    static void soultion(int idx) {
+    static void soultion(int row,int col) {
         if (flag) return;
 
-        if (idx == 81) {
+        if (row == 9) {
             flag = true;
             for (int[] ints : arr) {
                 for (int anInt : ints) {
@@ -56,10 +56,12 @@ class Main {
             }
             return;
         }
-        int row = idx/9;
-        int col = idx%9;
+        if(col>8){
+            soultion(row+1,0);
+            return;
+        }
         if (arr[row][col] != 0) {
-            soultion(idx + 1);
+            soultion(row,col + 1);
             return;
         }
             int[] mx = new int[]{0, 1};
@@ -76,7 +78,7 @@ class Main {
                         arr[nx][ny] = k;
                         domino[j][k] = true;
                         domino[k][j] = true;
-                        soultion(idx+ 1);
+                        soultion(row,col+ 1);
                         arr[row][col] = 0;
                         arr[nx][ny] = 0;
                         domino[j][k] = false;
