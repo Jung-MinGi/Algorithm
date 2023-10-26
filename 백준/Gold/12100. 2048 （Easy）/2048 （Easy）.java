@@ -6,7 +6,7 @@ import java.util.Objects;
 import java.util.StringTokenizer;
 
 class Main {
-    static int answer = 2;
+    static int answer = 0;
     static int n;
 
     public static void main(String[] args) throws IOException {
