@@ -13,15 +13,7 @@ class Main {
         StringTokenizer st = new StringTokenizer(br.readLine());
         n = st.nextToken();
         m = st.nextToken();
-        //길이가 같으면 그냥 비교후 바로 출력
         int cnt=0;
-        if(n.length()==m.length()){
-            for(int i=0;i<n.length();i++){
-                if(n.charAt(i)!=m.charAt(i))cnt++;
-            }
-            System.out.println(cnt);
-            return;
-        }
         int answer = Integer.MAX_VALUE;
         // 일단 최대한 같게 만들어야함
         for(int i=0;i<m.length();i++){
