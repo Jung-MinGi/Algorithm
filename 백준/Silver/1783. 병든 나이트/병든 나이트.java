@@ -12,7 +12,7 @@ class Main {
         int answer=0;
         if (n == 1) answer=1;
         else if (n == 2) answer=Math.min(4,(m+1)/2);
-        else{
+        else if (n > 2) {
             if(m>=7){
                 answer = m-2;
             }else{
