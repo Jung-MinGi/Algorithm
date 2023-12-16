@@ -20,7 +20,7 @@ class Main {
                     return;
                 }
             }
-            else if(c==yonsei[yonseiIdx]){
+            if(c==yonsei[yonseiIdx]){
                 yonseiIdx++;
                 if(yonsei.length==yonseiIdx){
                     System.out.println("YONSEI");
