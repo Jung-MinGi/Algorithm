@@ -28,10 +28,12 @@ class Main {
         segmentTree = new int[(int) Math.pow(2, i)];
 
         init(1, 1, n);
+        StringBuilder sb = new StringBuilder();
         while(m-->0){
             st = new StringTokenizer(br.readLine());
-            System.out.println(sum(1,1,n,Integer.parseInt(st.nextToken()),Integer.parseInt(st.nextToken())));
+           sb.append(sum(1,1,n,Integer.parseInt(st.nextToken()),Integer.parseInt(st.nextToken()))).append('\n');
         }
+        System.out.println(sb);
     }
 
     static int sum(int node, int start, int end, int left, int right) {
