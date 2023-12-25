@@ -3,16 +3,18 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Main {
-
-
+class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
-        System.out.println(combination(Integer.parseInt(st.nextToken()), Integer.parseInt(st.nextToken())));
+        int a = Integer.parseInt(st.nextToken());
+        int b = Integer.parseInt(st.nextToken());
+
+        System.out.println(factorial(a)/(factorial(a-b)*factorial(b)));
     }
-    static int combination(int a, int b) {
-        if (a == b || b == 0) return 1;
-        return combination(a - 1, b - 1) + combination(a - 1, b);
+
+    static int factorial(int a) {
+        if (a == 1 || a == 0) return 1;
+        return a * factorial(a - 1);
     }
 }
