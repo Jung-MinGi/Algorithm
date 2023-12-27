@@ -4,29 +4,22 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 public class Main {
-
-    static int[][] memozation;
+    private static final int MOD = 10007;
+    private static int[][] dp = new int[1001][1001];
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
-        int x = Integer.parseInt(st.nextToken());
-        int y = Integer.parseInt(st.nextToken());
-        memozation = new int[x + 1][x + 1];
-        memozation[1][0]=1;
-        memozation[1][1]=1;
-        int combination = combination(x, y);
-        System.out.println(combination);
+        int a = Integer.parseInt(st.nextToken());
+        int b = Integer.parseInt(st.nextToken());
+        dp[1][1] = 1;
+        dp[1][0] = 1;
+        System.out.println(soultion(a, b));
     }
 
-    static int combination(int a, int b) {
-        if (memozation[a][b] == 0) {
-            if (a == b || b == 0) {
-                memozation[a][b]=1;
-                return memozation[a][b];
-            }
-            memozation[a][b] = ((combination(a - 1, b - 1)%10007) + (combination(a - 1, b)%10007))%10007;
-        }
-        return memozation[a][b];
+    static int soultion(int n, int k) {
+        if (n == k || k == 0) return dp[n][k]=1;
+        if (dp[n][k] > 0) return dp[n][k];
+        return dp[n][k] = (soultion(n - 1, k - 1) + soultion(n - 1, k)) % MOD;
     }
 }
