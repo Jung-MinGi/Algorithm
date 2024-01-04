@@ -14,10 +14,11 @@ public class Main {
         int n = Integer.parseInt(st.nextToken());
 
 
-        for (int i = 0; i < n / a; i++) {
-            for (int j = 0; j < n / b; j++) {
-                for (int k = 0; k < n / c; k++) {
-                    if(a*i+b*j+k*c == n){
+        for (int i = 0; i <= n / a; i++) {
+            for (int j = 0; j <= n / b; j++) {
+                for (int k = 0; k <= n / c; k++) {
+                    int tmp = a * i + b * j + k * c;
+                    if (tmp == n) {
                         System.out.println(1);
                         return;
                     }
