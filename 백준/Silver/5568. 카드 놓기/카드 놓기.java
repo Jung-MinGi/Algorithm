@@ -7,36 +7,23 @@ public class Main {
     static int n;
     static int k;
     static HashSet<String> set = new HashSet<>();
-    static String[] arr;
+    static ArrayList<String> arr;
 
 
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         n = Integer.parseInt(br.readLine());
         k = Integer.parseInt(br.readLine());
-        arr = new String[n];
+        arr = new ArrayList<>();
         for (int i = 0; i < n; i++) {
-            arr[i] = br.readLine();
+            arr.add(br.readLine());
         }
-        combination(new ArrayList<>(), 0);
+        soultion(arr,new String[k], 0,new boolean[n]);
         System.out.println(set.size());
     }
 
-    static void combination(ArrayList<String> list, int depth) {
-        if (list.size() == k) {
-            boolean[] visit = new boolean[k];
-            soultion(list,new String[list.size()],0,visit);
-            return;
-        }
-        if (depth == n) return;
-        combination(list, depth + 1);
-        list.add(arr[depth]);
-        combination(list, depth + 1);
-        list.remove(list.size() - 1);
-    }
-
     static void soultion(ArrayList<String> list, String[] str, int depth, boolean[] visit) {
-        if (depth == list.size()) {
+        if (depth == k) {
             StringBuilder sb = new StringBuilder();
             Arrays.stream(str).iterator().forEachRemaining(sb::append);
             set.add(sb.toString());
