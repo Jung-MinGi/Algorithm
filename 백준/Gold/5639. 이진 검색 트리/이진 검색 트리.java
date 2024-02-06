@@ -5,7 +5,6 @@ import java.io.InputStreamReader;
 public class Main {
 
     static class Node {
-        public Node parent;
         public int key;
         public Node left;
         public Node right;
@@ -37,26 +36,28 @@ public class Main {
     }
 
     public static Node add(Node node, int k) {
-        if (root == null) {
-            root = new Node(k);
-            root.parent = root.left = root.right = null;
-            return root;
-        }
-        if (node == null) {
-            node = new Node(k);
-            node.left = node.right = null;
-            return node;
-        }
         Node current = node;
 
-        if (current.key < k) {
-            current.right = add(current.right, k);
-            return current;
-        } else {
-            current.left = add(current.left, k);
-            return current;
+        if (current == null) {
+            root = new Node(k);
+            return root;
         }
 
-
+        Node currentParent;
+        do {
+            currentParent = current;
+            if (current.key < k) {
+                current = current.right;
+            } else {
+                current = current.left;
+            }
+        } while (current != null);
+        Node tmp = new Node(k);
+        if (currentParent.key < k) {
+            currentParent.right = tmp;
+        } else {
+            currentParent.left = tmp;
+        }
+        return tmp;
     }
 }
