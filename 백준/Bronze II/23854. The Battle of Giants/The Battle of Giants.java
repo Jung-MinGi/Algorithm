@@ -21,7 +21,11 @@ public class Main {
             away -= 3;
             c++;
         }
-        if (home == 1 && away == 1) b++;
+        while(home>0&&away>0){
+            home--;
+            away--;
+            b++;
+        }
         if (home != 0 || away != 0) System.out.println(-1);
         else System.out.println(a + " " + b + " " + c);
     }
