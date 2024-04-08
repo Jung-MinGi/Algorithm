@@ -12,7 +12,7 @@ public class Main {
         int b = (int) Math.pow(10, Integer.parseInt(st.nextToken()));
         double v = a / (double) b;
 
-        long x = (long) (Math.round(v) * b);
+        int x = (int) (Math.round(v) * b);
         System.out.println(x);
     }
 }
