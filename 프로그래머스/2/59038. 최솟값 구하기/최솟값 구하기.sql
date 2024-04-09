@@ -1,2 +1,4 @@
 -- 코드를 입력하세요
-SELECT min(DATETIME) from ANIMAL_INS ;
+select
+min(DATETIME)
+from ANIMAL_INS
