@@ -1,2 +1,5 @@
 -- 코드를 입력하세요
-SELECT * from FOOD_PRODUCT where price=(select MAX(price) from FOOD_PRODUCT);
+select
+*
+from FOOD_PRODUCT
+order by price desc limit 1
