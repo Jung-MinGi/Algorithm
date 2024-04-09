@@ -1,2 +1,4 @@
 -- 코드를 입력하세요
-SELECT  COUNT(DISTINCT NAME) FROM ANIMAL_INS;
+select
+count(distinct name)
+from ANIMAL_INS
