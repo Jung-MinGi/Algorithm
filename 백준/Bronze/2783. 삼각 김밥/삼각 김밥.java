@@ -18,6 +18,7 @@ public class Main {
             y = Integer.parseInt(st.nextToken());
             min = Math.min((1000.0 / y) * x, min);
         }
-        System.out.printf("%.2f", min);
+        System.out.println((double) Math.round(min * 100) / 100.0);
+//        System.out.printf("%.2f", min);
     }
 }
