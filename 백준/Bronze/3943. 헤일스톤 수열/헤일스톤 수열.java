@@ -9,6 +9,7 @@ class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int tc=Integer.parseInt(br.readLine());
+        StringBuilder sb = new StringBuilder();
         while(tc-->0) {
 
 //            PriorityQueue<Integer> pq = new PriorityQueue<>((Integer a, Integer b) -> b - a);
@@ -26,7 +27,8 @@ class Main {
                 }
                 max=Math.max(i ,max);
             }
-            System.out.println(max);
+            sb.append(max).append('\n');
         }
+        System.out.println(sb);
     }
 }
