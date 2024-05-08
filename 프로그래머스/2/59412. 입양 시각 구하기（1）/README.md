@@ -1,6 +1,6 @@
 # [level 2] 입양 시각 구하기(1) - 59412 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/59412#qna) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/59412) 
 
 ### 성능 요약
 
@@ -16,7 +16,7 @@ Empty
 
 ### 제출 일자
 
-2024년 04월 13일 16:30:49
+2024년 05월 08일 14:37:26
 
 ### 문제 설명
 
