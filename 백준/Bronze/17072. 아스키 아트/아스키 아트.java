@@ -31,13 +31,14 @@ private static int t=510000;
                 a[i][j]=s;
             }
         }
+        StringBuilder sb = new StringBuilder();
         for (char[] chars : a) {
             for (char aChar : chars) {
-                System.out.print(aChar);
+                sb.append(aChar);
             }
-            System.out.println();
+            sb.append('\n');
         }
-
+        System.out.println(sb);
     }
 
     static int intensity(int a, int b, int c) {
