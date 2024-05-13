@@ -1,6 +1,6 @@
 # [level 3] 조건별로 분류하여 주문상태 출력하기 - 131113 
 
-[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/131113#qna) 
+[문제 링크](https://school.programmers.co.kr/learn/courses/30/lessons/131113) 
 
 ### 성능 요약
 
@@ -16,7 +16,7 @@ Empty
 
 ### 제출 일자
 
-2023년 10월 2일 21:40:37
+2024년 05월 13일 12:37:35
 
 ### 문제 설명
 
