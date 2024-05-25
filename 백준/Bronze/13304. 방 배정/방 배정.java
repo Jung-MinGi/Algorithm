@@ -45,12 +45,12 @@ public class Main {
                             }
                         } else {
                             if (arr[0] == 0 && sex == 0) {
-                                if (s - arr[1] == 1) {
+                                if (arr[1] -s== 1||arr[1]-s==0) {
                                     room[i].add(j);
                                     break;
                                 }
                             } else if (arr[0] == 1 && sex == 1) {
-                                if (s - arr[1] == 1) {
+                                if (arr[1] -s== 1||arr[1]-s==0) {
                                     room[i].add(j);
                                     break;
                                 }
